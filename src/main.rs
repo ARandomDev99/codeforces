@@ -1,5 +1,11 @@
 use std::io::Write;
 
+/*
+    Example Usage:
+    let x = parse!(lines, usize);
+    let (a, b) = parse!(lines, usize, usize);
+    let y = parse!(lines => Vec<_>);
+*/
 macro_rules! parse {
     ($lines: ident, $x: ty) => {
         $lines.next().unwrap().parse::<$x>()?
